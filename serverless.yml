@@ -14,19 +14,11 @@ provider:
   region: ${env:AWS_REGION}
 
 functions:
-  example1:
-    handler: handler.example1
+  login:
+    handler: auth-functions/handler.login
     events:
       - httpApi:
-          path: /hello
+          path: /login
           method: get
-
-  example2:
-    handler:
-      - handler.example3
-      - handler.example2
-    events:
-      - httpApi:
-          path: /hello
-          method: post
-          cors: true
+    environment:
+      AUTH_SECRET_KEY: ${env:AUTH_SECRET_KEY}

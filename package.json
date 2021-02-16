@@ -21,5 +21,7 @@
     "serverless-middleware": "0.0.13",
     "serverless-offline": "^6.8.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "require-directory": "^2.1.1"
+  }
 }
