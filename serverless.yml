@@ -19,6 +19,15 @@ functions:
     events:
       - httpApi:
           path: /login
-          method: get
+          method: post
     environment:
       AUTH_SECRET_KEY: ${env:AUTH_SECRET_KEY}
+
+  sign-up:
+    handler:
+      - auth-functions/handler.verifyToken
+      - auth-functions/handler.signUp
+    events:
+      - httpApi:
+          path: /sign-up
+          method: post
