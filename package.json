@@ -1,0 +1,25 @@
+{
+  "name": "serverless-aws-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ismetkizgin/serverless-aws-nodejs.git"
+  },
+  "author": "İsmet Kizgin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ismetkizgin/serverless-aws-nodejs/issues"
+  },
+  "homepage": "https://github.com/ismetkizgin/serverless-aws-nodejs#readme",
+  "devDependencies": {
+    "serverless-dotenv-plugin": "^3.5.1",
+    "serverless-middleware": "0.0.13",
+    "serverless-offline": "^6.8.0"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,32 @@
+service: x-services
+frameworkVersion: "2"
+
+plugins:
+  - serverless-offline
+  - serverless-middleware
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  stage: ${env:STAGE}
+  region: ${env:AWS_REGION}
+
+functions:
+  example1:
+    handler: handler.example1
+    events:
+      - httpApi:
+          path: /hello
+          method: get
+
+  example2:
+    handler:
+      - handler.example3
+      - handler.example2
+    events:
+      - httpApi:
+          path: /hello
+          method: post
+          cors: true
