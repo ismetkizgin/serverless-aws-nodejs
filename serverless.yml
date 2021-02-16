@@ -13,6 +13,11 @@ provider:
   stage: ${env:STAGE}
   region: ${env:AWS_REGION}
 
+custom:
+  middleware:
+    pre:
+      - middleware-functions/handler.validator
+
 functions:
   login:
     handler: auth-functions/handler.login
@@ -22,6 +27,7 @@ functions:
           method: post
     environment:
       AUTH_SECRET_KEY: ${env:AUTH_SECRET_KEY}
+    cors: true
 
   sign-up:
     handler:

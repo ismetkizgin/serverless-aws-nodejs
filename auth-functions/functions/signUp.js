@@ -1,6 +1,8 @@
+const HttpStatusCode = require("http-status-codes");
+
 module.exports = async (event) => {
   return {
-    statusCode: 200,
+    statusCode: HttpStatusCode.OK,
     body: JSON.stringify("Sign Up"),
   };
 };
