@@ -17,6 +17,8 @@ custom:
   middleware:
     pre:
       - middleware-functions/handler.validator
+    pos:
+      - middleware-functions/handler.timer
 
 functions:
   login:
